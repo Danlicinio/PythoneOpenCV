@@ -63,41 +63,6 @@ for contorno in contornos:
     cv2.putText(contornos_img, str(text), origem, font,1,(200,50,0),2,cv2.LINE_AA)
     
 
-    
-    #desenha linha do meio do círculo para o outro
-           #Não consegui fazer
-        
-
-    cv2.namedWindow("preview")
-    
-    #define a entrada de video para webcam
-    vc = cv2.VideoCapture(0)
-
-    #vc = cv2.VideoCapture("video.mp4") # para ler um video mp4 
-    #configura o tamanho da janela 
-    #vc.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-    #vc.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-
-    if vc.isOpened(): # try to get the first frame
-        rval, frame = vc.read()
-else:
-    rval = False
-
-while rval:
-    
-    img = image_da_webcam(frame) 
-   
-    # passa o frame para a função imagem_da_webcam e recebe em img imagem tratada
-    cv2.imshow("preview", img)
-    rval, frame = vc.read()
-    key = cv2.waitKey(20)
-    if key == 27: # exit on ESC
-        break
-
-cv2.destroyWindow("preview")
-vc.release()
-
-
 plt.subplot(1, 2, 1)
 plt.imshow(img_rgb)
 plt.subplot(1, 2, 2)
